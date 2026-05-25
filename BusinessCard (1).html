@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velelo Technologies — Business Card Canvas</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush: #f2b8c6;
+  --rose: #e8789a;
+  --deep-rose: #c0476a;
+  --pink-mist: #fce8ef;
+  --slate-dark: #2e2628;
+  --grey-700: #5c5358;
+  --grey-200: #ede9eb;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--grey-200);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--slate-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+/* Production Print Spec Framework (Standard 90mm x 50mm Business Card) */
+.card-canvas {
+  background: var(--white);
+  width: 90mm;
+  height: 50mm;
+  position: relative;
+  overflow: hidden;
+  padding: 6mm;
+  box-shadow: 0 15px 35px rgba(46, 38, 40, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Structural Layout: Front Side */
+.card-front {
+  background: linear-gradient(135deg, var(--pink-mist) 0%, var(--white) 100%);
+  border: 1px solid rgba(242, 184, 198, 0.3);
+}
+
+.brand-wrapper {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--slate-dark);
+  line-height: 1.2;
+}
+
+.logo-text em {
+  font-style: italic;
+  color: var(--deep-rose);
+  font-weight: 400;
+}
+
+.tagline-mini {
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--rose);
+  margin-top: 6px;
+}
+
+/* Structural Layout: Back Side */
+.card-back {
+  border: 1px solid var(--grey-200);
+}
+
+.card-back-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-accent-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--rose);
+  border-radius: 50%;
+}
+
+.meta-identity .name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--slate-dark);
+}
+
+.meta-identity .role {
+  font-size: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--grey-700);
+  margin-top: 2px;
+}
+
+.card-back-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--grey-200);
+  padding-top: 3mm;
+}
+
+.contact-details, .digital-destination {
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--grey-700);
+}
+
+.contact-details span, .digital-destination span {
+  display: block;
+}
+
+.digital-destination {
+  text-align: right;
+}
+
+.highlight-link {
+  color: var(--deep-rose);
+  font-weight: 500;
+}
+
+/* Print Overrides for Professional Cutting Matrices */
+@media print {
+  body { background: none; padding: 0; gap: 0; }
+  .card-canvas { box-shadow: none; page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+  <div class="card-canvas card-front">
+    <div class="brand-wrapper">
+      <h1 class="logo-text">Velelo <em>Technologies</em></h1>
+      <p class="tagline-mini">Digital Ecosystem Architects</p>
+    </div>
+  </div>
+
+  <div class="card-canvas card-back">
+    <div class="card-back-header">
+      <div class="meta-identity">
+        <h2 class="name">Executive Consultant</h2>
+        <p class="role">Solutions Architecture & Dev</p>
+      </div>
+      <div class="header-accent-dot"></div>
+    </div>
+    
+    <div class="card-back-footer">
+      <div class="contact-details">
+        <span>Mangaung, Bloemfontein</span>
+        <span>+27 (0) 64 678 5516</span>
+        <span>bridgetrethabile377@gmail.com</span>
+      </div>
+      <div class="digital-destination">
+        <span>Infrastructure Node:</span>
+        <span class="highlight-link">velelo.workers.dev</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
